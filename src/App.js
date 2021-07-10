@@ -1,8 +1,13 @@
+import BottomTab from "./components/BottomTab";
+import Header from "./components/Header";
+import Main from "./pages/Main";
 
 function App() {
   return (
-    <div>
-      <h1>Hello</h1>
+    <div className="flex flex-col mx-4">
+      <Header />
+      <Main />
+      <BottomTab />
     </div>
   );
 }
