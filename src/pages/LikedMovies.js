@@ -8,7 +8,7 @@ const LikedMovies = () => {
   return (
     <div>
       <PageHeading title="Favourite List" />
-      {likedMovies.map((likedMovie) => {
+      { likedMovies.length > 0 ? likedMovies.map((likedMovie) => {
         return (
           <div className="flex border-2 mb-3">
             <div className="mr-5">
@@ -29,7 +29,11 @@ const LikedMovies = () => {
             </div>
           </div>
         );
-      })}
+      }) : 
+      <div>
+        <p>Your Favourite List is Empty. Like Movies to add them into your Favourite List.</p>
+      </div>
+    }
     </div>
   );
 };
