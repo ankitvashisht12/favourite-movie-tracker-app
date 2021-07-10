@@ -1,16 +1,15 @@
-import React, {  createContext, useState } from 'react'
+import React, { createContext, useState } from "react";
 
-export const LikedMoviesContext = createContext({})
+export const LikedMoviesContext = createContext({});
 
 const LikedMoviesContextProvider = ({ children }) => {
+  const [likedMovies, setLikedMovies] = useState([]);
 
-	const [ likedMovies, setLikedMovies ] = useState([])
+  return (
+    <LikedMoviesContext.Provider value={{ likedMovies, setLikedMovies }}>
+      {children}
+    </LikedMoviesContext.Provider>
+  );
+};
 
-	return (
-		<LikedMoviesContext.Provider value={{likedMovies, setLikedMovies}}>
-			{children}
-		</LikedMoviesContext.Provider>
-	)
-}
-
-export default LikedMoviesContextProvider
+export default LikedMoviesContextProvider;

@@ -1,12 +1,12 @@
 export default function getMoviesByCategories(movies) {
-	const moviesByCategory = {}
+  const moviesByCategory = {};
 
-	movies.forEach(movie => {
-		if(!(movie.classification in moviesByCategory)) 
-			moviesByCategory[movie.classification] = []
+  movies.forEach((movie) => {
+    if (!(movie.classification in moviesByCategory))
+      moviesByCategory[movie.classification] = [];
 
-		moviesByCategory[movie.classification].push(movie) 
-	})
+    moviesByCategory[movie.classification].push(movie);
+  });
 
-	return moviesByCategory
+  return moviesByCategory;
 }
