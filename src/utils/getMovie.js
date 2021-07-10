@@ -1,3 +1,3 @@
-export default function getMovie(moviesData, id){
-	return moviesData.filter(movie => movie.id === id)
+export default function getMovie(moviesData, slug){
+	return moviesData.filter(movie => movie.slug === slug)
 }
