@@ -9,11 +9,16 @@ const LikedMovies = () => {
   return (
     <div className="mb-14">
       <PageHeading title="Favourite List" />
-      { likedMovies.length > 0 ? <LikedMoviesList likedMovies={likedMovies} /> : 
-      <div>
-        <p>Your Favourite List is Empty. Like Movies to add them into your Favourite List.</p>
-      </div>
-    }
+      {likedMovies.length > 0 ? (
+        <LikedMoviesList likedMovies={likedMovies} />
+      ) : (
+        <div>
+          <p>
+            Your Favourite List is Empty. Like Movies to add them into your
+            Favourite List.
+          </p>
+        </div>
+      )}
     </div>
   );
 };

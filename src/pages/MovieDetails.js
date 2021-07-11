@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { LikedMoviesContext } from "../context/MoviesContext";
 import getMovie from "../utils/getMovie";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import MovieHighlights from "../components/MovieHighlights";
 import CastAndDirector from "../components/CastAndDirector";
 import MovieOverview from "../components/MovieOverview";
@@ -43,15 +43,24 @@ const MovieDetails = ({ movies }) => {
           {isLiked ? <FaHeart size="1.3rem" /> : <FaRegHeart size="1.3rem" />}
         </button>
       </div>
-      <MovieHighlights imdb_rating={movie.imdb_rating} classification={movie.classification} length={movie.length} genres={movie.genres} />
-      <CastAndDirector director={movie.director} cast={movie.cast} released_on={movie.released_on} />
+      <MovieHighlights
+        imdb_rating={movie.imdb_rating}
+        classification={movie.classification}
+        length={movie.length}
+        genres={movie.genres}
+      />
+      <CastAndDirector
+        director={movie.director}
+        cast={movie.cast}
+        released_on={movie.released_on}
+      />
       <MovieOverview overview={movie.overview} />
     </div>
   );
 };
 
 MovieDetails.propTypes = {
-  movies: PropTypes.array.isRequired
-}
+  movies: PropTypes.array.isRequired,
+};
 
 export default MovieDetails;

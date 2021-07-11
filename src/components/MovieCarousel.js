@@ -1,6 +1,6 @@
 import React from "react";
 import MovieCard from "./MovieCard";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const MovieCorousel = ({ movies }) => {
   return (
@@ -13,7 +13,7 @@ const MovieCorousel = ({ movies }) => {
 };
 
 MovieCorousel.propTypes = {
-  movies: PropTypes.array.isRequired
-}
+  movies: PropTypes.array.isRequired,
+};
 
 export default MovieCorousel;
