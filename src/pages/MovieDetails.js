@@ -3,10 +3,11 @@ import { useParams } from "react-router";
 import { LikedMoviesContext } from "../context/MoviesContext";
 import getMovie from "../utils/getMovie";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
+import PropTypes from 'prop-types';
 
-const MovieDetails = ({ moviesData }) => {
+const MovieDetails = ({ movies }) => {
   const { slug } = useParams();
-  const movie = getMovie(moviesData, slug)[0];
+  const movie = getMovie(movies, slug)[0];
   const { likedMovies, setLikedMovies } = useContext(LikedMoviesContext);
   const [isLiked, setIsLiked] = useState(
     likedMovies.find((likeMovie) => likeMovie.id === movie.id)
@@ -77,5 +78,9 @@ const MovieDetails = ({ moviesData }) => {
     </div>
   );
 };
+
+MovieDetails.propTypes = {
+  movies: PropTypes.array.isRequired
+}
 
 export default MovieDetails;

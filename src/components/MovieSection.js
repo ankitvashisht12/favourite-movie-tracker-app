@@ -1,5 +1,6 @@
 import React from "react";
 import MovieCarousel from "./MovieCarousel";
+import PropTypes from 'prop-types';
 
 const MovieSection = ({ category, movies }) => {
   return (
@@ -11,5 +12,10 @@ const MovieSection = ({ category, movies }) => {
     </section>
   );
 };
+
+MovieSection.propTypes = {
+  category: PropTypes.string.isRequired,
+  movies: PropTypes.array.isRequired
+}
 
 export default MovieSection;

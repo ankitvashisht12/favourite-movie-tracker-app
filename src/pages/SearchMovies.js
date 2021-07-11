@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MovieCard from "../components/MovieCard";
 import PageHeading from "../components/PageHeading";
+import PropTypes from 'prop-types';
 
 const SearchMovies = ({ movies }) => {
   const [searchedMovies, setSearchedMovies] = useState([]);
@@ -34,5 +35,9 @@ const SearchMovies = ({ movies }) => {
     </div>
   );
 };
+
+SearchMovies.propTypes = {
+  movies: PropTypes.array.isRequired
+}
 
 export default SearchMovies;

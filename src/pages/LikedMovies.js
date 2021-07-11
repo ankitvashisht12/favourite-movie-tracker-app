@@ -10,7 +10,7 @@ const LikedMovies = () => {
       <PageHeading title="Favourite List" />
       { likedMovies.length > 0 ? likedMovies.map((likedMovie) => {
         return (
-          <div className="flex border-2 mb-3">
+          <div key={likedMovie.id} className="flex border-2 mb-3">
             <div className="mr-5">
               <img src={likedMovie.poster} alt="movie poster" width="100px" />
             </div>

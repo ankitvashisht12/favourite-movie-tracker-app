@@ -24,13 +24,13 @@ const Main = () => {
         <LikedMovies />
       </Route>
       <Route path="/movie/:slug">
-        <MovieDetails moviesData={moviesData.movies} />
+        <MovieDetails movies={moviesData.movies} />
       </Route>
       <Route path="/search">
         <SearchMovies movies={moviesData.movies} />
       </Route>
       <Route path="/">
-        <Home moviesData={moviesData} />
+        <Home movies={moviesData.movies} />
       </Route>
     </Switch>
   ) : null;

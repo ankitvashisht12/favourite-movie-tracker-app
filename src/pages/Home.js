@@ -4,10 +4,11 @@ import PageHeading from "../components/PageHeading";
 import getMoviesByCategories from "../utils/getMoviesByCategories";
 import getUniqueCategories from "../utils/getUniqueCategories";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-const Home = ({ moviesData }) => {
-  const moviesByCategory = getMoviesByCategories(moviesData.movies);
-  const categories = getUniqueCategories(moviesData.movies);
+const Home = ({ movies }) => {
+  const moviesByCategory = getMoviesByCategories(movies);
+  const categories = getUniqueCategories(movies);
 
   return (
     <>
@@ -27,5 +28,9 @@ const Home = ({ moviesData }) => {
     </>
   );
 };
+
+Home.propTypes = {
+  movies: PropTypes.array.isRequired
+}
 
 export default Home;
