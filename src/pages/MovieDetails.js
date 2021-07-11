@@ -4,6 +4,9 @@ import { LikedMoviesContext } from "../context/MoviesContext";
 import getMovie from "../utils/getMovie";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import PropTypes from 'prop-types';
+import MovieHighlights from "../components/MovieHighlights";
+import CastAndDirector from "../components/CastAndDirector";
+import MovieOverview from "../components/MovieOverview";
 
 const MovieDetails = ({ movies }) => {
   const { slug } = useParams();
@@ -40,41 +43,9 @@ const MovieDetails = ({ movies }) => {
           {isLiked ? <FaHeart size="1.3rem" /> : <FaRegHeart size="1.3rem" />}
         </button>
       </div>
-      <div className="flex items-center mb-2 text-sm">
-        <p className="mr-2">{movie.imdb_rating}⭐</p>
-        <div className="rounded bg-gray-800 w-1 h-1 mr-2" />
-        <p className="mr-2">{movie.classification}</p>
-        <div className="rounded bg-gray-800 w-1 h-1 mr-2" />
-        <p>{movie.length}</p>
-      </div>
-      <div className="flex">
-        {movie.genres.map((genre, index) => (
-          <p
-            key={index}
-            className="bg-green-200 rounded-lg mr-2 py-0.5 px-2 text-xs mb-5"
-          >
-            {genre}
-          </p>
-        ))}
-      </div>
-      <hr />
-      <div className="my-3 text-sm">
-        <p>
-          Director:{" "}
-          {typeof movie.director === "object"
-            ? movie.director.join(", ")
-            : movie.director}
-        </p>
-        <p>
-          Cast:{" "}
-          {typeof movie.cast === "object" ? movie.cast.join(", ") : movie.cast}
-        </p>
-        <p>Release Date: {Date(movie.released_on)}</p>
-      </div>
-      <hr />
-      <div className="mt-5">
-        <p>{movie.overview}</p>
-      </div>
+      <MovieHighlights imdb_rating={movie.imdb_rating} classification={movie.classification} length={movie.length} genres={movie.genres} />
+      <CastAndDirector director={movie.director} cast={movie.cast} released_on={movie.released_on} />
+      <MovieOverview overview={movie.overview} />
     </div>
   );
 };
