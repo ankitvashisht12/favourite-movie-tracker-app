@@ -20,7 +20,7 @@ const MovieHighlights = ({ imdb_rating, classification, length, genres }) => {
 };
 
 MovieHighlights.propTypes = {
-  imdb_rating: PropTypes.string.isRequired,
+  imdb_rating: PropTypes.number.isRequired,
   classification: PropTypes.string.isRequired,
   length: PropTypes.string.isRequired,
   genres: PropTypes.array.isRequired,

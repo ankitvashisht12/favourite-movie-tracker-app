@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Genres = ({ genres }) => {
-  console.log("genres ", genres);
   return genres.map((genre, index) => {
     return (
       <p
