@@ -26,7 +26,7 @@ const MovieDetails = ({ moviesData }) => {
   };
 
   return (
-    <div>
+    <div className="mb-14">
       <img
         className="object-cover md:h-96 w-full"
         src={movie.backdrop}
@@ -71,7 +71,7 @@ const MovieDetails = ({ moviesData }) => {
         <p>Release Date: {Date(movie.released_on)}</p>
       </div>
       <hr />
-      <div className="mt-5 mb-10">
+      <div className="mt-5">
         <p>{movie.overview}</p>
       </div>
     </div>

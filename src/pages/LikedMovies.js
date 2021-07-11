@@ -6,7 +6,7 @@ const LikedMovies = () => {
   const { likedMovies } = useContext(LikedMoviesContext);
 
   return (
-    <div>
+    <div className="mb-14">
       <PageHeading title="Favourite List" />
       { likedMovies.length > 0 ? likedMovies.map((likedMovie) => {
         return (

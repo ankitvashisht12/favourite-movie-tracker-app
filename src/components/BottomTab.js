@@ -3,7 +3,7 @@ import { FaHeart, FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const BottomTab = () => {
   return (
-    <div className="fixed left-0 bottom-0 right-0 grid grid-cols-2 z-10 bg-white py-1">
+    <div className="fixed left-0 bottom-0 right-0 grid grid-cols-2 z-10  py-1 rounded-3xl bg-gray-200 m-2">
       <Link to="/">
         <div className="flex items-center justify-center cursor-pointer">
           <div className="p-2">

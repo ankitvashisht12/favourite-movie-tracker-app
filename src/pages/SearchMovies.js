@@ -16,14 +16,16 @@ const SearchMovies = ({ movies }) => {
   };
 
   return (
-    <div>
+    <div className="mb-14">
       <PageHeading title="Search Movies" />
-      <input
-        type="text"
-        className="w-full broder-2 text-center p-2 mb-5"
-        placeholder="Search Your Movie..."
-        onChange={(e) => onSearchHandler(e)}
-      />
+      <div className="border-2 mb-5">
+        <input
+          type="text"
+          className="w-full broder-2 text-center p-2"
+          placeholder="Search Your Movie..."
+          onChange={(e) => onSearchHandler(e)}
+        />
+      </div>
       <div className="flex flex-wrap justify-center">
         {searchedMovies.map((movie) => {
           return <MovieCard key={movie.id} movie={movie} />;
